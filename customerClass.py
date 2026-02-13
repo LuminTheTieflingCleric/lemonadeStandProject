@@ -1,8 +1,7 @@
-from shop import shop
+money = 0
 
 
-
-def mode():
+def game_mode():
     global money
     print("Easy = E, Normal = N, Hard = H")
     difficulty = input("What difficulty do you want to do?\n")
@@ -15,10 +14,6 @@ def mode():
     else:
         print("Thats not an option!")
         difficulty = input("What difficulty do you want to do?\n")
-        
-        
-
-
 
 def customerClass():
     import random
