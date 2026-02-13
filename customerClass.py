@@ -28,30 +28,25 @@ def customerClass():
     customerChartVisuals = []
     customers = []           # Use when using data
     for _ in range(0,150):
-        customersTemporary = ([customerNames[random.randint(0,20)],random.randint(5,100),random.randint(5,100),random.randint(5,100)]) # Make loop later
+        customersTemporary = [customerNames[random.randint(0,20)],random.randint(5,100),random.randint(5,100),random.randint(5,100),random.randint(1,20)] # Make loop later
                 #  ,[customerNames[random.randint(0,20)],random.randint(5,30),random.randint(80,100),random.randint(5,20)]
                 #  ,[customerNames[random.randint(0,20)],random.randint(40,60),random.randint(30,45),random.randint(50,70)]," "," ")
 
 
         
-        catergorize = ["Name = ","Sweetness = ","Tartness = ","Coldness = "]
+        catergorize = ["Name = ","Sweetness = ","Tartness = ","Coldness = ","Money = "]
         filler = []
 
         
-        for i in range(0,4):
+        for i in range(0,5):
             filler.append(catergorize[i]+ str(customersTemporary[i]))
             # customerChartVisuals = filler
             customers.append(customersTemporary)
-            if i % 4 == 0:
+            if i % 5 == 0:
                 customerChartVisuals.append(filler)
        # Will make compatible with the rest later
-
-    filler = input("Would you like to view customer data?")     # Here "filler" = answer for the question
-    if filler == "yes":
+            
         for i3 in customerChartVisuals:
             print(*i3)
 
-    elif filler == "no":
-        print("Ok")
-    else:
-        print("Thats not an option")
+

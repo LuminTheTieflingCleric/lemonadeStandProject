@@ -1,3 +1,6 @@
+
+
+
 def recipe(lemons, sugar, ice):
     # from lemonadeStandShop import shop, lemons, sugar, ice
     lemonAmount = 20
@@ -31,5 +34,3 @@ def recipe(lemons, sugar, ice):
             print("Thats not enough!")
         if iceAmount > ice:
             print("You dont have enough ice for that.")
-
-    # return lemons, sugar, ice

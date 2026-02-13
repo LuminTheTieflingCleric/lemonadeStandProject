@@ -1,6 +1,6 @@
 from customerClass import customerClass, money
 from lemonadeStandShop import shop
-from LemonadeStandRecipe import recipe
+from LemonadeStandRecipe import recipe, lemonAmount, iceAmount, sugarAmount
 
 settings = False
 gameLoop = True
@@ -31,12 +31,12 @@ while gameLoop:
                     print("Thats too little!")
             except ValueError:
                 print("Please select a valid option...\n")
-        elif option == 4:
+        elif option == 4:                                                     #
             print("filler")
         elif option == 5:
             settings = True
             while settings:
-                print("1 - View Customer Data, 2 - View Price, 3 - View Inventory, 4 - Go Back")
+                print("1 - View Customer Data, 2 - View Price, 3 - View Inventory, 4 - View Recipe, 5 - Go Back")
                 option = int(input("What would you like to do?\n"))
                 if option == 1:
                     customerClass()
@@ -45,6 +45,8 @@ while gameLoop:
                 if option == 3:
                     print(f"Lemons = {round(lemons)}\nIce = {round(ice)}\nSugar = {round(sugar, 1)}")
                 if option == 4:
+                    print(f"Lemons per Cup = {lemonAmount}\nIce per Cup = {iceAmount}\nSugar per Cup = {sugarAmount}")
+                if option == 5:
                     settings = False
         elif option == 6:
             gameLoop = False
