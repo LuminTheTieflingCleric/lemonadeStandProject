@@ -1,6 +1,3 @@
-
-
-
 def recipe(lemons, sugar, ice):
     # from lemonadeStandShop import shop, lemons, sugar, ice
     lemonAmount = 20
