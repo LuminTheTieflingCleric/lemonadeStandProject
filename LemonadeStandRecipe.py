@@ -31,3 +31,4 @@ def recipe(lemons, sugar, ice):
             print("Thats not enough!")
         if iceAmount > ice:
             print("You dont have enough ice for that.")
+
