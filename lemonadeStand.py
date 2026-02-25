@@ -9,11 +9,11 @@ option = 0
 lemons = 0
 sugar = 0
 ice = 0
-day = 6
+day = 0
 endless = False
 price = "You haven't assigned a price yet"
 while gameLoop:
-    print(f"1 - Shop/Decide Difficulty, 2 - Change Recipe, 3 - Change Price, 4 - Start day #{day}, 5 - Settings, 6 - Quit")
+    print("1 - Shop/Decide Difficulty, 2 - Change Recipe, 3 - Change Price, 4 - Start day, 5 - Settings, 6 - Quit")
     try:
         option = int(input("What would you like to do?\n"))
     except ValueError:
@@ -37,9 +37,7 @@ while gameLoop:
                 print(price)
                 gameLoop = gameLoop
             else:
-                print(day)
                 day += 1
-                print(day)
                 if day == 7:
                     endless = input("You have reached day 7 would you like to continue and proceed playing endless?")
                     if endless == "yes" or "y" or "sure"or "Sure" or "Yes" or "Y":
@@ -53,17 +51,15 @@ while gameLoop:
         elif option == 5:
             settings = True
             while settings:
-                print("1 - View Customer Data, 2 - View Price, 3 - View Inventory, 4 - Go Back") # 4 - View Recipe,
+                print("1 - View Price, 2 - View Inventory, 3 - Go Back") # 4 - View Recipe,
                 option = input("What would you like to do?\n")
                 if option == "1":
-                    customerClass()
-                elif option == "2":
                     print(price)
-                elif option == "3":
+                elif option == "2":
                     print(f"Lemons = {round(lemons)}\nIce = {round(ice)}\nSugar = {round(sugar, 1)}")
                 # if option == "4":
                 #     print(f"Lemons per Cup = {lemonAmount}\nIce per Cup = {iceAmount}\nSugar per Cup = {sugarAmount}")
-                elif option == "4":
+                elif option == "3":
                     settings = False
                 else:
                     print("Please select valid option...\n")
