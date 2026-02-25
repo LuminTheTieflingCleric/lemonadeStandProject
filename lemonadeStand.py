@@ -46,7 +46,8 @@ while gameLoop:
                         gameLoop = False
                     else:
                         print("Please select a valid option...\n")
-                print("filler")
+
+                print("filler")                                                                                                             # Day will be here (Getting money, removing ingredients from inventory)
 
         elif option == 5:
             settings = True
@@ -67,4 +68,3 @@ while gameLoop:
             gameLoop = False
         else:
             print("Please select valid option...\n")
-

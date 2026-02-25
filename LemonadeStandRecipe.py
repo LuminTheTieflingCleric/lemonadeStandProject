@@ -1,4 +1,4 @@
-def recipe(lemons, sugar, ice):
+def recipe(money, lemons, sugar, ice):
     lemonAmount = {"lemons", 20}
     sugarAmount = {"sugar",20}
     iceAmount = {"ice",20}
@@ -29,4 +29,4 @@ def recipe(lemons, sugar, ice):
             print("Thats not enough!")
         if iceAmount["ice"] > ice:
             print("You dont have enough ice for that.")
-    return lemonAmount, sugarAmount, iceAmount
+    return money, lemonAmount, sugarAmount, iceAmount
