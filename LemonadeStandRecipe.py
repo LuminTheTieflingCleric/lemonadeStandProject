@@ -1,9 +1,7 @@
 def recipe(lemons, sugar, ice):
-    # from lemonadeStandShop import shop, lemons, sugar, ice
     lemonAmount = 20
     sugarAmount = 20
     iceAmount = 20
-    # print(lemons)
 
     while not lemonAmount < 10 and lemonAmount > 0:
         lemonAmount = int(input("How many lemons do you what in your lemonade (Per Cup of Lemonade)\n"))
