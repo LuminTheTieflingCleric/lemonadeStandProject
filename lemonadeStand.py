@@ -1,6 +1,8 @@
 from lemonadeStandShop import shop
 from LemonadeStandRecipe import recipe
-
+from customer import customer_check
+import os
+os.system("cls")
 settings = False
 gameLoop = True
 cash = 0
@@ -21,7 +23,10 @@ while gameLoop:
         if option == 1:
             cash, lemons, sugar, ice = shop(cash, lemons, sugar, ice)
         elif option == 2:
-            recipe(lemons, sugar, ice)
+            try:
+                recipe(lemons, sugar, ice)
+            except TypeError:
+                print("Please buy at least one of each ingredient")
         elif option == 3:
             try:
                 price = float(input("What do you want to have the customers pay for your lemonade?"))
@@ -45,8 +50,10 @@ while gameLoop:
                         gameLoop = False
                     else:
                         print("Please select a valid option...\n")
-
-                print("filler")                                                                                                             # Day will be here (Getting money, removing ingredients from inventory)
+                try:
+                    customer_check()  
+                except TypeError:
+                    print("Please set your toping's")
 
         elif option == 5:
             settings = True
