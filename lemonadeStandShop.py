@@ -1,4 +1,4 @@
-from customerClass import game_mode
+#from customerClass import game_mode
 # game_mode()
 firstPass = True
 def shop(money, lemons, sugar, ice):

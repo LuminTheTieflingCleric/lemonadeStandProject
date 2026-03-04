@@ -1,10 +1,9 @@
-from customerClass import customerClass, money
 from lemonadeStandShop import shop
 from LemonadeStandRecipe import recipe
 
 settings = False
 gameLoop = True
-money = 0
+cash = 0
 option = 0
 lemons = 0
 sugar = 0
@@ -20,7 +19,7 @@ while gameLoop:
         print("Please select a valid option...")
     else:
         if option == 1:
-            money, lemons, sugar, ice = shop(money, lemons, sugar, ice)
+            cash, lemons, sugar, ice = shop(cash, lemons, sugar, ice)
         elif option == 2:
             recipe(lemons, sugar, ice)
         elif option == 3:
