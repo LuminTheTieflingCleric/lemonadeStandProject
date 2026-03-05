@@ -1,15 +1,22 @@
 from lemonadeStandShop import shop
-from LemonadeStandRecipe import recipe
+from LemonadeStandRecipe import recipe_function
 from customer import customer_check
 import os
 os.system("cls")
 settings = False
 gameLoop = True
-cash = 0
+money = 0
 option = 0
-lemons = 0
-sugar = 0
-ice = 0
+inventory = {
+    "lemons" : 0,
+    "sugar" : 0,
+    "ice" : 0
+}
+recipe = {
+    "lemons" : 0,
+    "sugar" : 0,
+    "ice" : 0
+}
 day = 0
 endless = False
 price = "You haven't assigned a price yet"
@@ -21,10 +28,10 @@ while gameLoop:
         print("Please select a valid option...")
     else:
         if option == 1:
-            cash, lemons, sugar, ice = shop(cash, lemons, sugar, ice)
+            shop(money, inventory)
         elif option == 2:
             try:
-                recipe(lemons, sugar, ice)
+                recipe_function(recipe)
             except TypeError:
                 print("Please buy at least one of each ingredient")
         elif option == 3:
@@ -53,7 +60,7 @@ while gameLoop:
                 try:
                     customer_check()  
                 except TypeError:
-                    print("Please set your toping's")
+                    print("Please set your ingredents in the the \"Change Recipe\" option.")
 
         elif option == 5:
             settings = True
