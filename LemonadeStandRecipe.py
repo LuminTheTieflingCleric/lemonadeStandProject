@@ -1,7 +1,7 @@
 def recipe_function(money, recipe):
 
 
-    while recipe["lemons"] >= 10 and recipe["lemons"] < 0:
+    while recipe["lemons"] <= 10 and recipe["lemons"] > 0:
         recipe["lemons"] = int(input("How many lemons do you what in your lemonade (Per Cup of Lemonade)\n"))
         if recipe["lemons"] > 5:
                 print("Thats too many!")

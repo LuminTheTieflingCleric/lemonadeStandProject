@@ -7,6 +7,8 @@ settings = False
 gameLoop = True
 money = 0
 option = 0
+customerBuy = 0
+customerNoBuy = 0
 inventory = {
     "lemons" : 0,
     "sugar" : 0,
@@ -28,10 +30,10 @@ while gameLoop:
         print("Please select a valid option...")
     else:
         if option == 1:
-            shop(money, inventory)
+            money = shop(money, inventory)
         elif option == 2:
             try:
-                recipe_function(recipe)
+                recipe_function(money,recipe)
             except TypeError:
                 print("Please buy at least one of each ingredient")
         elif option == 3:
@@ -58,22 +60,28 @@ while gameLoop:
                     else:
                         print("Please select a valid option...\n")
                 try:
-                    customer_check()  
+                    if customer_check() == True:
+                        money += price
+                        customerBuy += 1
+                    else:
+                        customerNoBuy += 1
                 except TypeError:
                     print("Please set your ingredents in the the \"Change Recipe\" option.")
 
         elif option == 5:
             settings = True
             while settings:
-                print("1 - View Price, 2 - View Inventory, 3 - Go Back") # 4 - View Recipe,
+                print("1 - View Price, 2 - View Inventory, 3 - Statistics, 4 - Go Back") # 4 - View Recipe,
                 option = input("What would you like to do?\n")
                 if option == "1":
                     print(price)
                 elif option == "2":
-                    print(f"Lemons = {round(lemons)}\nIce = {round(ice)}\nSugar = {round(sugar, 1)}")
+                    print(f"Lemons = {round(inventory["lemons"])}\nIce = {round(inventory["ice"])}\nSugar = {round(inventory["sugar"], 1)}")
                 # if option == "4":
                 #     print(f"Lemons per Cup = {lemonAmount}\nIce per Cup = {iceAmount}\nSugar per Cup = {sugarAmount}")
                 elif option == "3":
+                    print(f"Customers who bought your lemonade : {customerBuy}\nCustomers that did not buy your lemonade : {customerNoBuy}")
+                elif option == "4":
                     settings = False
                 else:
                     print("Please select valid option...\n")
