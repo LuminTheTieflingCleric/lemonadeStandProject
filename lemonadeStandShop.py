@@ -10,7 +10,7 @@ def shop(money, inventory):
             money = 250
         elif difficulty.lower() == "n":
             money = 150
-        elif difficulty.lower == "h":
+        elif difficulty.lower() == "h":
             money = 50
         else:
             print("Thats not an option!")

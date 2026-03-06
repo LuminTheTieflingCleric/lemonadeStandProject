@@ -1,8 +1,8 @@
 from lemonadeStandShop import shop
 from LemonadeStandRecipe import recipe_function
 from customer import customer_check
-import os
-os.system("cls")
+# import os
+# os.system()
 settings = False
 gameLoop = True
 money = 0
