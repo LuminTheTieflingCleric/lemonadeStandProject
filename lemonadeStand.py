@@ -1,8 +1,8 @@
 from lemonadeStandShop import shop
 from LemonadeStandRecipe import recipe_function
 from customer import customer_check
-import os
-os.system("cls")
+# import os
+# os.system()
 settings = False
 gameLoop = True
 money = 0
@@ -58,7 +58,8 @@ while gameLoop:
                     else:
                         print("Please select a valid option...\n")
                 try:
-                    customer_check()  
+                    if customer_check() == True:
+                        money += price
                 except TypeError:
                     print("Please set your ingredents in the the \"Change Recipe\" option.")
 
@@ -70,7 +71,7 @@ while gameLoop:
                 if option == "1":
                     print(price)
                 elif option == "2":
-                    print(f"Lemons = {round(lemons)}\nIce = {round(ice)}\nSugar = {round(sugar, 1)}")
+                    print(f"Lemons = {round(inventory["lemons"])}\nIce = {round(inventory["ice"])}\nSugar = {round(inventory["sugar"], 1)}")
                 # if option == "4":
                 #     print(f"Lemons per Cup = {lemonAmount}\nIce per Cup = {iceAmount}\nSugar per Cup = {sugarAmount}")
                 elif option == "3":

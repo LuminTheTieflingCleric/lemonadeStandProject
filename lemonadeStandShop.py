@@ -10,7 +10,7 @@ def shop(money, inventory):
             money = 250
         elif difficulty.lower() == "n":
             money = 150
-        elif difficulty.lower == "h":
+        elif difficulty.lower() == "h":
             money = 50
         else:
             print("Thats not an option!")
@@ -41,7 +41,7 @@ def shop(money, inventory):
             money -= buyAmount * 1.10
             inventory["sugar"] += buyAmount * 5
             money = round(money, 1)
-            print("You have $"+str(money)+"0 left and", int(sugar),"cups of sugar.")
+            print("You have $"+str(money)+"0 left and", int(inventory["sugar"]),"cups of sugar.")
                 
     if openShop == "ice":                                          # Ice (12x)(10x)
         print("10 dozen of ice is $1.00 ($1.10 including tax)")
@@ -52,5 +52,5 @@ def shop(money, inventory):
             money -= buyAmount * 1.10
             inventory["ice"] += buyAmount * 12 * 10
             money = round(money, 1)
-            print("You have $"+str(money)+"0 left and", int(ice),"peices of ice.")
+            print("You have $"+str(money)+"0 left and", int(inventory["ice"]),"peices of ice.")
     return money
