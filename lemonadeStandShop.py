@@ -34,7 +34,7 @@ def shop(money, inventory):
 
     if openShop == "sugar":                                        # Sugar (Per Cup)(5x)
         print("5 cups of Sugar is $1.00 ($1.10 including tax)")
-        buyAmount = float(input("How many cups would you like to buy?"))
+        buyAmount = float(input("How many cups would you like to buy?\n"))
         if buyAmount * 1.10 >= money:
             print("You dont have enough money for that much.")
         else:
@@ -45,7 +45,7 @@ def shop(money, inventory):
                 
     if openShop == "ice":                                          # Ice (12x)(10x)
         print("10 dozen of ice is $1.00 ($1.10 including tax)")
-        buyAmount = float(input("How many dozens of ice would you like to buy?"))
+        buyAmount = float(input("How many dozens of ice would you like to buy?\n"))
         if buyAmount * 1.10 >= money:
             print("You dont have that enough money for that much.")
         else:

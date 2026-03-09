@@ -14,7 +14,7 @@ def customer_check(recipe):
     price_limit=attributes["price"]
 
         
-    if recipe["ice"] > ice_pref:
+    if recipe["ice"] < ice_pref:
         return False
 
 
