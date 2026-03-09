@@ -4,9 +4,7 @@
 # and a price point they are willing to pay.
 # All of these attributes will influence their purchasing decision and
 # are returned as a list of attributes.
-
 import random
-
 class Customer:
     def __init__(self, sweetness_preference=None, ice_preference=None, price_point=None):
         self.sweetness_preference = (

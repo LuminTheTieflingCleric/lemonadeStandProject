@@ -1,6 +1,6 @@
 from lemonadeStandShop import shop
 from LemonadeStandRecipe import recipe_function
-from customer import customer_check
+from customer import customer_check, recipe
 # import os
 # os.system()
 settings = False
@@ -14,15 +14,17 @@ inventory = {
     "sugar" : 0,
     "ice" : 0
 }
-recipe = {
-    "lemons" : 0,
-    "sugar" : 0,
-    "ice" : 0
-}
+# recipe = {
+#     "lemons" : 3,
+#     "sugar" : 3,
+#     "ice" : 3
+# }
 day = 0
 endless = False
 price = "You haven't assigned a price yet"
 while gameLoop:
+    customerBuyToday = 0
+    customerNoBuyToday = 0
     print("1 - Shop/Decide Difficulty, 2 - Change Recipe, 3 - Change Price, 4 - Start day, 5 - Settings, 6 - Quit")
     try:
         option = int(input("What would you like to do?\n"))
@@ -38,7 +40,7 @@ while gameLoop:
                 print("Please buy at least one of each ingredient")
         elif option == 3:
             try:
-                price = float(input("What do you want to have the customers pay for your lemonade?"))
+                price = float(input("What do you want to have the customers pay for your lemonade?\n"))
                 if price > 20:
                     print("Thats too much!") 
                 if price < 0.01:
@@ -59,14 +61,16 @@ while gameLoop:
                         gameLoop = False
                     else:
                         print("Please select a valid option...\n")
-                try:
-                    if customer_check() == True:
-                        money += price
-                        customerBuy += 1
-                    else:
-                        customerNoBuy += 1
-                except TypeError:
-                    print("Please set your ingredents in the the \"Change Recipe\" option.")
+                for _ in range(150):
+                    try:
+                        if customer_check(recipe) == True:
+                            money += price
+                            customerBuy += 1
+                        else:
+                            customerNoBuy += 1
+                    except TypeError:
+                        print("Please set your ingredents in the the \"Change Recipe\" option.")
+                print(f"You sold {customerBuyToday} cups of lemonade today!")
 
         elif option == 5:
             settings = True

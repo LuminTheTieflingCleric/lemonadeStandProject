@@ -1,4 +1,10 @@
 from customer_class import Customer
+recipe = {
+    "lemons" : 3,
+    "sugar" : 3,
+    "ice" : 3,
+    "price" : 3
+}
 
 def customer_check(recipe):
     customer=Customer()
@@ -8,10 +14,11 @@ def customer_check(recipe):
     price_limit=attributes["price"]
 
         
-    if recipe["ice"] > ice_pref+10 or ice_pref-10:
+    if recipe["ice"] > ice_pref:
         return False
-    
-    if abs(recipe["lemons"]-recipe["sugar"]) < sweetness_pref+10 or sweetness_pref-10:
+
+
+    if abs(recipe["lemons"]-recipe["sugar"]) < sweetness_pref:
         return False
     
     if recipe["price"] < price_limit:
